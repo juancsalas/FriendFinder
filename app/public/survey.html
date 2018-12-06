@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Friend Finder</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <h2 class="pt-5" >Survey Questions</h2>
+
+    <hr class="my-4">
+
+    <form>
+        <h3>About You</h3>
+        <div class="form-group">
+            <label for="name">Name (Required)</label>
+            <input type="name" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+            <label for="imageLink">Link to Photo Image (Required)</label>
+            <input type="imageLink" class="form-control" id="imageLink">
+        </div>
+    </form>
+
+    <hr class="my-4">
+        
+    <div>
+        <h4><strong>Question 1</strong></h4>
+        <h5>I am the sort of person who considers other people’s feelings.</h5>
+    </div>
+    <div class="row">
+        <div class="col-3 input-group mb-3">
+            <select class="custom-select" id="answer01">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h4><strong>Question 2</strong></h4>
+        <h5>I am the sort of person who like to understand the underlying theory.</h5>
+    </div>
+    <div class="row">
+        <div class="col-3 input-group mb-3">
+            <select class="custom-select" id="answer02">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h4><strong>Question 3</strong></h4>
+        <h5>I like helping people.</h5>
+    </div>
+    <div class="row">
+        <div class="col-3 input-group mb-3">
+            <select class="custom-select" id="answer03">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h4><strong>Question 4</strong></h4>
+        <h5>I am more skeptic than trustful towards strangers.</h5>
+    </div>
+    <div class="row">
+        <div class="col-3 input-group mb-3">
+            <select class="custom-select" id="answer04">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h4><strong>Question 5</strong></h4>
+        <h5>I prefer intimacy of a few people than a large social gathering.</h5>
+    </div>
+    <div class="row">
+        <div class="col-3 input-group mb-3">
+            <select class="custom-select" id="answer05">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h4><strong>Question 6</strong></h4>
+        <h5>I am the sort of person who gets nervous before big events.</h5>
+    </div>
+    <div class="row">
+        <div class="col-3 input-group mb-3">
+            <select class="custom-select" id="answer06">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h4><strong>Question 7</strong></h4>
+        <h5>I prefer to adhere to a plan than go with the flow.</h5>
+    </div>
+    <div class="row">
+        <div class="col-3 input-group mb-3">
+            <select class="custom-select" id="answer07">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h4><strong>Question 8</strong></h4>
+        <h5>I rarely do something just out of sheer curiosity.</h5>
+    </div>
+    <div class="row">
+        <div class="col-3 input-group mb-3">
+            <select class="custom-select" id="answer08">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h4><strong>Question 9</strong></h4>
+        <h5>I tend to worry a lot about things that are mostly out of my control.</h5>
+    </div>
+    <div class="row">
+        <div class="col-3 input-group mb-3">
+            <select class="custom-select" id="answer09">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h4><strong>Question 10</strong></h4>
+        <h5>You feel more energetic after spending time with a group of people.</h5>
+    </div>
+    <div class="row">
+        <div class="col-3 input-group mb-3">
+            <select class="custom-select" id="answer10">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+        </div>
+    </div>
+    <br>
+    <button id="submitBtn" type="button" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">
+        <i class="fas fa-check-circle"></i>
+        Submit
+    </button>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel"><strong>Best Match</strong></h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3 id="modalName"></h3>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-4">
+
+    <div>
+        <p>
+            <a id="apiLink" href="/api/friends">API Friends List</a> | <a id="gitHubLink" href="url">Github Repo</a>
+        </p>
+    </div>
+
+
+</div>
+
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+
+$("#submitBtn").on("click", function(event){
+    event.preventDefault();
+
+    var answer = [
+        $("#answer01").val(), 
+        $("#answer02").val(),
+        $("#answer03").val(),
+        $("#answer04").val(),
+        $("#answer05").val(),
+        $("#answer06").val(),
+        $("#answer07").val(),
+        $("#answer08").val(),
+        $("#answer09").val(),
+        $("#answer10").val()
+    ]
+
+    var friendList = {
+        name: $("#name").val().trim(),
+        image: $("#imageLink").val().trim(),
+        answers: answer
+    }
+
+    $.post("/api/friends", friendList,
+        function(data) {
+
+            var name = data[0].name;
+            var image = data[0].image
+            
+            $("#modalName").text(name)
+            $(".modal-body").append("<img src='" + image + "'>")
+
+            console.log(image);            
+
+        }
+        
+    );
+})
+
+</script>
