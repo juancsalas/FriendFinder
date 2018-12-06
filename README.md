@@ -8,3 +8,5 @@ After you input your name, a link to an image, and answer the 10 questions, you 
 In order to run the app, you'll need to run `npm install`, npm `install express`, and `npm install path`.
 
 You can also click the link at the bottom of the either the home or survey page to go to the Github Repo. 
+
+This app is deployed on Heroku can can be accessed here: https://frozen-oasis-75180.herokuapp.com/
