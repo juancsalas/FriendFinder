@@ -19,13 +19,11 @@ module.exports = function(app) {
         var tempAnswers = [];
         var currentCount = 100;
         
-
         for (let i = 0; i < friends.length-1; i++) {
             
             tempMatch = friends[i];
             tempAnswers = friends[i].answers
             var newCount = 0;
-
 
             for (let i = 0; i < tempAnswers.length; i++) {
             
@@ -41,12 +39,7 @@ module.exports = function(app) {
 
             
         }            
-        
-        console.log(currentCount);
-        
-        console.log(finalMatch);
-        
-        
+                
         // THis will return final match
         res.json(finalMatch);
 
