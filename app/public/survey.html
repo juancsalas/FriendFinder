@@ -26,6 +26,7 @@
 
     <hr class="my-4">
 
+    <!-- Form to submit name and link of your image -->
     <form>
         <h3>About You</h3>
         <div class="form-group">
@@ -40,6 +41,7 @@
 
     <hr class="my-4">
         
+    <!-- The div which has the 10 questions and answer options -->
     <div>
         <h4><strong>Question 1</strong></h4>
         <h5>I am the sort of person who considers other people’s feelings.</h5>
@@ -205,32 +207,27 @@
         Submit
     </button>
     
+    <!-- Modal from Booststrap that displays the results of your match after submiting your answers -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="exampleModalLabel"><strong>Best Match</strong></h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h3 id="modalName"></h3>
-                <img id="modalImage" src="">
-            </div>
+                <div class="modal-header"></div>
+                
+                <div class="modal-body"></div>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
 
     <hr class="my-4">
 
+    <!-- Links to the API and Github Repo -->
     <div>
         <p>
-            <a id="apiLink" href="/api/friends">API Friends List</a> | <a id="gitHubLink" href="url">Github Repo</a>
+            <a id="apiLink" href="/api/friends">API Friends List</a> | <a id="gitHubLink" href="https://github.com/juancsalas/FriendFinder">Github Repo</a>
         </p>
     </div>
 
@@ -241,49 +238,79 @@
 </html>
 
 
-
+<!-- JS that takes in the all the answers the user has submitted -->
 <script type="text/javascript">
 
-$("#submitBtn").on("click", function(event){
-    event.preventDefault();
+    // On click even that is triggered by the submit button
+    $("#submitBtn").on("click", function(event){
+        event.preventDefault();
+        
+        // Taking all the values of every answer the user chose and puts them into the array "answer"
+        var answer = [
+            $("#answer01").val(), 
+            $("#answer02").val(),
+            $("#answer03").val(),
+            $("#answer04").val(),
+            $("#answer05").val(),
+            $("#answer06").val(),
+            $("#answer07").val(),
+            $("#answer08").val(),
+            $("#answer09").val(),
+            $("#answer10").val()
+        ]
 
-    var answer = [
-        $("#answer01").val(), 
-        $("#answer02").val(),
-        $("#answer03").val(),
-        $("#answer04").val(),
-        $("#answer05").val(),
-        $("#answer06").val(),
-        $("#answer07").val(),
-        $("#answer08").val(),
-        $("#answer09").val(),
-        $("#answer10").val()
-    ]
+        // Taking the input from the form in the HTML and putting into the friendList object
+        // Also doing the same with the array "answer" that was assigned above
+        var friendList = {
+            name: $("#name").val().trim(),
+            image: $("#imageLink").val().trim(),
+            answers: answer
+        }
 
-    var friendList = {
-        name: $("#name").val().trim(),
-        image: $("#imageLink").val().trim(),
-        answers: answer
-    }
+        // If statement validates whether there is data in the form under Name and Image Link
+        // If the conditions are met, then the app makes the POST request to find the closes match and displays a Modal with the appropriate info
+        // Else, the POST request isn't made, and a Modal with an error message is displayed instead
+        if (friendList.name && friendList.image){
 
-    $.post("/api/friends", friendList,
-        function(data) {
+            $.post("/api/friends", friendList,
 
-            var name = data[0].name;
-            var image = data[0].image
+                // Function retrieves into from POST request containing the frined match 
+                function(data) {
 
-            var modalInfo = "<h3 class='modalName'>" + name + "</h3>";
-            modalInfo += "<img class='modalImage' src='" + image + "' width='350'>";
+                    // Declaring and assigning the name of and image link of the friend match to variables
+                    var name = data[0].name;
+                    var image = data[0].image
+
+                    // Creating the variables "modalInfo" and "modalHeader" witht he appropriate information to display in the Modal as a result 
+                    var modalInfo = "<h3 class='modalName'>" + name + "</h3>";
+                    modalInfo += "<img class='modalImage' src='" + image + "' width='350'>";
+
+                    var modalHeader = "<h2 class='modal-title' id='exampleModalLabel'><strong>Best Match</strong></h2>";
+                    modalHeader += "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+                    modalHeader += "<span aria-hidden='true'>&times;</span></button>";
+                    
+                    // Appending the "modalInfo" and "modalHeader" to "modal-header" through jquery
+                    $(".modal-header").html(modalHeader)
+                    $(".modal-body").html(modalInfo)
+                    
+                }
+                
+            );
+        }
+        else {
+
+            // Creating the variables "modalInfo" and "modalHeader" with error message
+            var modalHeader = "<h2 class='modal-title' id='exampleModalLabel'><strong>Warning</strong></h2>";
+            modalHeader += "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+            modalHeader += "<span aria-hidden='true'>&times;</span></button>";
+
+            var modalInfo = "<p class='modalName'>Please provide your Name and and Image Link.</p>";
             
-            
+            // Appending the "modalInfo" and "modalHeader" to "modal-header" through jquery
+            $(".modal-header").html(modalHeader)
             $(".modal-body").html(modalInfo)
-            
-
-            console.log(image);            
 
         }
-        
-    );
-})
+    })
 
 </script>
